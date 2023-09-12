@@ -1,6 +1,8 @@
 const app = document.querySelector("#app");
 const todoList = document.querySelector(".todo-list");
 
+
+
 const myModal = new bootstrap.Modal("#myModal", {
   keyboard: false,
 });
@@ -20,38 +22,66 @@ function list(todos) {
     const deleteBtn = document.createElement("button");
     const editBtn = document.createElement("button");
 
+    const input = document.createElement("input");
+
+    input.setAttribute('type', 'checkbox')
+    input.classList.add('check')
+
+
     itemNome.innerHTML =
-      "<strong>Nome do produto: </strong>" + task.nome + "<br>";
+      "<br><strong>Nome do produto: </strong>" + task.nome + "<br>";
     itemValor.innerHTML =
       "<strong>valor do produto: </strong>" + task.valor + "<br>";
     itemQtd.innerHTML =
-      "<strong>Descrição do produto: </strong>" + task.qtd + "<br>";
+      "<strong>Descrição do produto: </strong>" + task.desc + "<br>";
     itemDesc.innerHTML =
-      "<strong>quantidades desejadas: </strong>" + task.desc + "<br>";
+      "<strong>quantidades desejadas: </strong>" + task.qtd + "<br>";
     deleteBtn.innerHTML = "deletar";
     deleteBtn.classList.add("btn", "btn-danger", "btn-sm", "mt-3", "del-btn");
     (editBtn.innerHTML = "Editar"),
       editBtn.classList.add("btn", "btn-info", "btn-sm", "edit-btn", "mt-3","ms-3");
 
+    itemList.append(input);
     itemList.append(itemNome);
     itemList.append(itemValor);
     itemList.append(itemQtd);
     itemList.append(itemDesc);
     itemList.append(deleteBtn);
     itemList.append(editBtn);
+    
 
-    itemList.classList.add("mb-3", "p-3", "bg-light");
+    itemList.classList.add("mb-3", "p-3",'list_Item');
     itemList.setAttribute("data-index", cont);
+
+    function check_todos(){
+      const checkTodos = todoList.querySelectorAll(".check");
+      for (const btn of checkTodos) {
+        btn.addEventListener('click', function(e){
+          const index = btn.parentNode.dataset.index;
+            itemList.classList.toggle('bg-success')
+            
+        
+         
+          
+        })
+        
+      } 
+    }
+
+    
 
     todoList.append(itemList);
     cont++;
     console.log(cont);
   }
 
+  check_todos();
   delete_itens();
   edit_itens();
   submitEdit();
 }
+
+
 
 function delete_itens() {
   const dlt = todoList.querySelectorAll(".del-btn");
@@ -102,3 +132,8 @@ function submitEdit(){
       
     })
 }
+
+
+
+
+
