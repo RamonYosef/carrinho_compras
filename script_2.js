@@ -25,9 +25,9 @@ function list(todos) {
     input.setAttribute("type", "checkbox");
     input.setAttribute("name", "check");
     input.setAttribute("value", false);
-    input.classList.add("check");
+    input.classList.add("check", 'form-check-input');
 
-    itemList.innerHTML = task.check + "<br>";
+    
     itemNome.innerHTML =
       "<br><strong>Nome do produto: </strong>" + task.nome + "<br>";
     itemValor.innerHTML =
@@ -63,10 +63,13 @@ function list(todos) {
     cont++;
     console.log(cont);
 
-    if(task.check === true){
-      itemList.classList.add('list_check')
+    if (task.check === true) {
+      itemList.classList.add("list_check");
+      itemList.classList.add('text-white')
+      
     } else {
-      itemList.classList.remove('list_check')
+      itemList.classList.remove("list_check");
+      itemList.classList.remove('text-white')
     }
   }
 
@@ -79,37 +82,30 @@ function list(todos) {
 function todo_check() {
   const inputCheck = todoList.querySelectorAll(".check");
   for (const btn of inputCheck) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const form = e.target;
-
-
+    btn.addEventListener("click", function () {
+      
       const index = btn.parentNode.dataset.index;
-      if(todos[index].check === false){
+      if (todos[index].check === false) {
         const Data = {
           nome: todos[index].nome,
           valor: todos[index].valor,
           qtd: todos[index].qtd,
           desc: todos[index].desc,
-          check: todos[index].check = true
+          check: (todos[index].check = true)
         };
-        todos[index] = Data
-        list(todos)
+        todos[index] = Data;
+        list(todos);
       } else {
         const Data = {
           nome: todos[index].nome,
           valor: todos[index].valor,
           qtd: todos[index].qtd,
           desc: todos[index].desc,
-          check: todos[index].check = false
+          check: (todos[index].check = false),
         };
-        todos[index] = Data
-        list(todos)  
+        todos[index] = Data;
+        list(todos);
       }
-
-      
-      
-      
     });
   }
 }
@@ -155,7 +151,7 @@ function submitEdit() {
       valor: form.querySelector("[name=valores]").value,
       qtd: form.querySelector("[name=qtd]").value,
       desc: form.querySelector("[name=desc]").value,
-      check: (todoList.querySelectorAll("[name=check]").value = false)
+      check: (todoList.querySelectorAll("[name=check]").value = false),
     };
 
     todos[index] = Data;
