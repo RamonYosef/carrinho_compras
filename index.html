@@ -16,7 +16,8 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
       body {
@@ -34,7 +35,7 @@
         color: #7430f9;
       }
 
-      .btn-submit{
+      .btn-submit {
         font-family: "Poppins", sans-serif;
         background-color: #7430f9;
         color: #fff;
@@ -45,21 +46,36 @@
         transition: 0.3s;
       }
 
-      .btn-submit:hover{
+      .btn-submit:hover {
         background-color: #8146f7;
       }
 
-      
+      .btn-closet {
+        font-family: "Poppins", sans-serif;
+        background-color: #0ADAE7;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        width: 120px;
+        height: 40px;
+        transition: 0.3s;
+      }
 
-      .todo-list{
+      .btn-closet:hover {
+        background-color: #08b4c0;
+      }
+
+      .todo-list {
         word-break: break-all;
       }
 
-
-      .list_Item{
+      .list_Item {
         background-color: #fff;
       }
-      
+
+      .list_check{
+        background-color: #A9B2B9;
+      }
 
     </style>
   </head>
@@ -74,31 +90,49 @@
 
             <form action="" class="bg-light p-3 rounded" id="addTodos">
               <div class="mb-3">
-                <input class="form-control" type="text" placeholder="Nome do produto" name="nome" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Nome do produto"
+                  name="nome"
+                />
               </div>
               <div class="mb-3">
-                <input class="form-control" type="number" placeholder="Valor" name="valores" />
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Valor"
+                  name="valores"
+                />
               </div>
               <div class="mb-3">
-                <input class="form-control" type="text" placeholder="descrição" name="desc" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="descrição"
+                  name="desc"
+                />
               </div>
               <div class="mb-3">
-                <input  class="form-control" type="text" placeholder="Quantidade" name="qtd" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Quantidade"
+                  name="qtd"
+                />
               </div>
               <div class="mb-3">
                 <button class="btn-submit" type="submit">Enviar</button>
               </div>
             </form>
 
-            <ul class="todo-list mt-4 list-unstyled">
-             
-            </ul>
+            <ul class="todo-list mt-4 list-unstyled"></ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="myModal" class="modal" tabindex="-1" >
+    <div id="myModal" class="modal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -112,25 +146,45 @@
           </div>
           <div class="modal-body">
             <!-- form -->
-            <form id="editTodo" class="bg-light" >
+            <form id="editTodo" class="bg-light">
               <div class="mb-3">
-                <input class="form-control" type="text" placeholder="Nome do produto" name="nome" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Nome do produto"
+                  name="nome"
+                />
               </div>
               <div class="mb-3">
-                <input class="form-control" type="number" placeholder="Valor" name="valores" />
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Valor"
+                  name="valores"
+                />
               </div>
               <div class="mb-3">
-                <input class="form-control" type="text" placeholder="descrição" name="desc" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="descrição"
+                  name="desc"
+                />
               </div>
               <div class="mb-3">
-                <input  class="form-control" type="text" placeholder="Quantidade" name="qtd" />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Quantidade"
+                  name="qtd"
+                />
               </div>
               <input class="form-control" type="hidden" name="item" />
 
               <div class="md-3">
                 <button
                   type="button"
-                  class="btn btn-secondary btn-submit"
+                  class="btn btn-secondary btn-closet"
                   data-bs-dismiss="modal"
                 >
                   Close
