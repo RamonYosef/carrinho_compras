@@ -6,15 +6,7 @@ const myModal = new bootstrap.Modal("#myModal", {
   keyboard: false,
 });
 
-let todos = [
-  {
-    nome: "jhytjy5jy5j",
-    valor: "900",
-    qtd: "80",
-    desc: "brgnrnrenryemn",
-    check: false,
-  },
-];
+let todos = [];
 
 function list(todos) {
   todoList.innerHTML = "";
@@ -45,12 +37,7 @@ function list(todos) {
     const real = document.createElement("span");
     real.innerHTML = innerHTML =
       "<div class' row d-flex-justify-content-center '><b> Realizado <i class='bx bxs-badge-check bx-sm'></i> </b></div>";
-    real.classList.add(
-     "text-white",
-     "row",
-     "invisible",
-     'fs-3'
-     );
+    real.classList.add("text-white", "row", "invisible", "fs-3");
 
     const input = document.createElement("button");
     input.innerHTML = "verificar";
@@ -120,7 +107,7 @@ function list(todos) {
       deleteBtn.classList.toggle("invisible");
       editBtn.classList.toggle("invisible");
       btnBack.classList.toggle("invisible");
-      real.classList.toggle('invisible')
+      real.classList.toggle("invisible");
       todoListCheck.append(itemList);
     } else {
       todoList.append(itemList);
