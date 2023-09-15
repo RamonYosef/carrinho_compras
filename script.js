@@ -13,5 +13,10 @@ formTodos.addEventListener("submit", function (e) {
   };
 
   todos.push(Data);
+
+  console.log(todos)
   list(todos);
 });
+
+
+list(todos);

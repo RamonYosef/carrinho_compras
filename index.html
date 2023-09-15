@@ -71,13 +71,53 @@
 
       .list_Item {
         background-color: #fff;
+        border-radius: 15px;
       }
 
       .list_check{
-        background-color: #A9B2B9;
+        background-color: #44b93e;
+        word-break: break-all;
       }
 
-      
+      .modal-title{
+        color: #7431f9;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .check{
+        background-color: #7431f9;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .check:hover{
+        background-color: #8146f7;
+      }
+
+      .edit-btn{
+        background-color: #da3ca8;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        border: none;
+      }
+
+      .edit-btn:hover{
+        background-color: #e659c1;
+        color: white;
+      }
+
+      .invisible{
+        display: none;
+      }
+
+      .btn-back{
+        background-color: #9b3eff;
+        border: none;
+      }
+
+      .btn-back:hover{
+        background-color: #a75bf9;
+        color: white;
+      }
 
     </style>
   </head>
@@ -97,6 +137,7 @@
                   type="text"
                   placeholder="Nome do produto"
                   name="nome"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -105,6 +146,7 @@
                   type="number"
                   placeholder="Valor"
                   name="valores"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -113,6 +155,7 @@
                   type="text"
                   placeholder="descrição"
                   name="desc"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -121,14 +164,19 @@
                   type="text"
                   placeholder="Quantidade"
                   name="qtd"
+                  required
                 />
               </div>
               <div class="mb-3">
                 <button class="btn-submit" type="submit">Enviar</button>
               </div>
-            </form>
+            </form> 
 
-            <ul class="todo-list mt-4 list-unstyled"></ul>
+            <div class="d-flex justify-content-evenly column-gap-3">
+              <ul class="todo-list mt-4 list-unstyled col-lg-12"></ul>
+              <ul class="todo-list-check mt-4 list-unstyled col-lg-12 "></ul>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -208,7 +256,6 @@
     ></script>
 
     <script src="script_2.js"></script>
-    <script src="check.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
